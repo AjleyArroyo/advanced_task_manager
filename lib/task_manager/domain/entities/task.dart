@@ -1,13 +1,13 @@
 class Task {
-  final String id;
+  final int id;
   final String title;
-  final String description;
-  final bool state;
+  final String? description;
+  final bool completed;
 
   Task({
     required this.id,
     required this.title,
     required this.description,
-    required this.state,
+    required this.completed,
   });
 }
