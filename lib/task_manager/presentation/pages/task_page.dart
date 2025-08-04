@@ -67,8 +67,7 @@ class TaskPage extends ConsumerWidget {
                     title: Text(task.title),
                     subtitle: Text(task.description ?? ""),
                     trailing: Row(
-                      mainAxisSize: MainAxisSize
-                          .min, // Para que no ocupe todo el espacio horizontal
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Switch(
                           value: task.completed,
@@ -84,7 +83,7 @@ class TaskPage extends ConsumerWidget {
                                 .updateTask(updated);
                           },
                         ),
-                        const Icon(Icons.chevron_right), // Flecha >
+                        const Icon(Icons.chevron_right),
                       ],
                     ),
                   );

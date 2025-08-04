@@ -15,7 +15,7 @@ class TaskRepositoryImpl implements TaskRepository {
 
   @override
   Future<List<Task>> getTasks() async {
-    List<Task> tasksApi = await taskApiDatasource.getTasks();
+    List<TaskModel> tasksApi = await taskApiDatasource.getTasks();
     await saveTasks(tasksApi.take(20).toList());
     return await taskHiveDatasource.getTasks();
   }
