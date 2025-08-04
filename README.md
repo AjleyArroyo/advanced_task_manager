@@ -1,16 +1,53 @@
-# advanced_task_manager
+# Challenge Advanced Task Manager
 
-A new Flutter project.
+# Resumen
 
-## Getting Started
+Administrador de tareas avanzado, el cual obtiene datos de https://jsonplaceholder.typicode.com/todos/ para traer las primeras tareas, luego las guarda en una BD usando Hive, para luego poder hacer la creación y edición directamente a la BD, los datos solo lo trae la primera vez para cargar la BD, luego todo se maneja con Hive
 
-This project is a starting point for a Flutter application.
+Tambien cuenta una vista de Países que obtiene los paises con Graphql desde https://countries.trevorblades.com/
 
-A few resources to get you started if this is your first Flutter project:
+# Especificaciones Tecnicas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Se esta utilizando Clean Architecture
+- Manejador de Estados: Riverpod
+- Test Unitario de el repositorio que obtiene las tareas
+- Test de Widget para la vista de Paises
+- Hive
+- Graphql
+- Llamadas ApiRest usando Dio
+- Uso de Freezed para modelos inmutables
+- Mockito para mockear los test
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Recursos necesarios para compilar la App
+
+- Descargar el proyecto del repositorio
+- Instalar dependencias: flutter pub get
+- En caso de errores con el freezed y test los modelos generados, volver a generarlos con: flutter pub run build_runner build --delete-conflicting-output
+- Compilar el proyecto
+
+Versiones con la que estoy trabajando:
+
+- Flutter 3.32.6 • channel stable • https://github.com/flutter/flutter.git
+- Tools • Dart 3.8.1 • DevTools 2.45.1
+
+## Arquiteectura
+
+┌────────────────────────────────────────────────────────────────┐
+│ Presentation Layer │
+│ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ │
+│ │ Pages │ │ Providers │ │ Widgets │ │
+│ │ │ │ │ │ Components │ │
+│ └─────────────────┘ └─────────────────┘ └─────────────────┘ │
+├────────────────────────────────────────────────────────────────┤
+│ Domain │
+│ ┌─────────────────┐ ┌─────────────────┐ │
+│ │ Entities. │ │ Repository │ │
+│ │ │ │ │ │
+│ └─────────────────┘ └─────────────────┘ │
+├────────────────────────────────────────────────────────────────┤
+│ Data Layer │
+│ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ │
+│ │ DataSources │ │ Data Models │ │ Repositories │ │
+│ │ │ │ │ │ │ │
+│ └─────────────────┘ └─────────────────┘ └─────────────────┘ │
+└────────────────────────────────────────────────────────────────┘
