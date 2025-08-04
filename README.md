@@ -1,6 +1,4 @@
-
 # Challenge Advanced Task Manager
-
 
 # Resumen
 
@@ -9,6 +7,7 @@ Administrador de tareas avanzado, el cual obtiene datos de https://jsonplacehold
 Tambien cuenta una vista de Países que obtiene los paises con Graphql desde https://countries.trevorblades.com/
 
 # Especificaciones Tecnicas
+
 - Se esta utilizando Clean Architecture
 - Manejador de Estados: Riverpod
 - Test Unitario de el repositorio que obtiene las tareas
@@ -20,19 +19,20 @@ Tambien cuenta una vista de Países que obtiene los paises con Graphql desde htt
 - Mockito para mockear los test
 
 # Recursos necesarios para compilar la App
+
 - Descargar el proyecto del repositorio
 - Instalar dependencias: flutter pub get
 - En caso de errores con el freezed y test los modelos generados, volver a generarlos con: flutter pub run build_runner build --delete-conflicting-output
 - Compilar el proyecto
 
 Versiones con la que estoy trabajando:
+
 - Flutter 3.32.6 • channel stable • https://github.com/flutter/flutter.git
 - Tools • Dart 3.8.1 • DevTools 2.45.1
 
-
-
 ## Arquiteectura
 
+```
 ┌────────────────────────────────────────────────────────────────┐
 │                    Presentation Layer                          │
 │  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐ │
@@ -52,3 +52,4 @@ Versiones con la que estoy trabajando:
 │  │                 │  │                 │  │                 │ │
 │  └─────────────────┘  └─────────────────┘  └─────────────────┘ │
 └────────────────────────────────────────────────────────────────┘
+```
